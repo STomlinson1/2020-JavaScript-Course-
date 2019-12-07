@@ -58,7 +58,6 @@ let myColor = "   blue   ";
 myColor = myColor.trim().toUpperCase();
 console.log(myColor);
 
-
 /* 
 Different set of string methods
 Some methods accept arguments that modify their behavior. We pass these arguments inside of the parentheses.
@@ -88,5 +87,14 @@ str = "baseball is entertaining";
 str = str.replace('entertaining','boring');
 console.log(str);
 
+/*
+Escape Characters
+  \n  - newline
+  \' - single quote
+  \" - double quote
+  \\ - backslash
+*/
 
+/*
 
+*/
