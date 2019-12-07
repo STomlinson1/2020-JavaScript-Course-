@@ -96,5 +96,21 @@ Escape Characters
 */
 
 /*
-
+String Template Literals
+  Template literals are stirngs that allow embedded expressions, which will be evalulated and then turned into a resulting string.
+  We use BACK-TICKS NOT SINGLE QUOTES
+  ${}
 */
+
+str = `You owe me ${100 + 300}`;
+console.log(str);
+
+let animal = 'pig';
+let sound = 'oink';
+str = `${animal} says ${sound}`;
+console.log(str);
+
+let item = 'cucumbers', price = 1.99, quantity = 4;
+str = `You bought ${quantity} ${item}, total price: $${price*quantity}`;
+console.log(str);
+

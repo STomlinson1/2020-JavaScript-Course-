@@ -8,9 +8,11 @@ Primitive types:
 
   Boolean: true and false values
 
-  Null
+  Null: intentional absence of any value,
+        when you want something to be empty,
+        must be assigned
 
-  Undefined
+  Undefined: Variables that do not have an assigned value are undefined
 
   Symbol
 
