@@ -6,9 +6,13 @@ Primitive types:
   
   String
 
-  Boolean
+  Boolean: true and false values
 
   Null
 
   Undefined
+
+  Symbol
+
+  BigInt
 */
