@@ -45,3 +45,18 @@ if (userScore > highScore) {
 }else{
   console.log(`Good Game. Your score of ${userScore} did not beat the high score of ${highScore}`);
 }
+
+// Nested if
+let password;
+
+//check to see if password is at least 6 characters
+if (password.length >= 6) {
+  //check to see if there are any spaces in password
+  if(password.indexOf(' ') === -1){
+    console.log("valid Password");
+  }else{
+    console.log('Password is long enough but cannot contain spaces');
+  }
+}else{
+  console.log("Password must be longer");
+}
