@@ -29,3 +29,15 @@ console.log(shoppingList[1]);
 
 //Access last element of array
 console.log(shoppingList[shoppingList.length - 1]);
+
+// arrays are mutable
+let list = ['Cheddar Cheese','2% Milk'];
+// change index 1 
+list[1] = 'Whole Milk';
+console.log(list);
+
+// add to end
+// not idea way to add to array. Better to use methods
+list[list.length] = 'Tomatoes';
+console.log(list);
+
