@@ -26,3 +26,6 @@ let stuff = [true, 68, 'car', null];
 let shoppingList = ['cheese','cereal','ice'];
 console.log(shoppingList);
 console.log(shoppingList[1]);
+
+//Access last element of array
+console.log(shoppingList[shoppingList.length - 1]);
