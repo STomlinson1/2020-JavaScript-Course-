@@ -15,6 +15,7 @@ console.log(nums);
 console.log(otherNums);
 
 const city = 'Lisbon';
+// using const with arrays makes the array reference stay the same
 const myEggs = ['brown','brown'];
 myEggs.push('white');
 console.log(myEggs);
