@@ -45,3 +45,28 @@ const game = {
 	},
 	board   : [ [ 'O', null, 'X' ], [ 'X', 'O', 'X' ], [ null, 'O', 'X' ] ]
 };
+
+// array object equality
+let nums = [ 1, 2, 3 ];
+let mystery = [ 1, 2, 3 ];
+// the addresses are compared
+// these arrays 'look' the same, but refer to different arrays
+// only checks equality of reference
+nums === mystery; //false
+
+let moreNums = nums;
+nums === moreNums; //true
+
+const user = {
+	userName      : 'CherryGarcia8',
+	email         : 'garcia@gmail.com',
+	notifications : []
+};
+
+if (user.notifications.length === 0) {
+	console.log('NO NEW NOTIFICATIONS');
+}
+// is the same as because 0 is a falsy value
+if (!user.notifications.length) {
+	console.log('NO NEW NOTIFICATIONS');
+}
