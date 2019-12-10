@@ -6,7 +6,7 @@ Common Array Methods:
   Unshift - add to start
   concat - merge two or more arrays, does not mutate original arrays, creates a new version
   includes - look for a value
-  indexOf - 
+  indexOf - return index of an element in an array
   join - creates a string from arr
   reverse - reverses an array
   Slice - copy portion of an arr
@@ -57,3 +57,26 @@ console.log(veggies.concat(fruits)); // [ 'brocoli', 'lettuce', 'apple', 'banana
 let allFood = fruits.concat(veggies,meats); //[ 'apple', 'banana', 'brocoli', 'lettuce', 'steak', 'burgers' ]
 console.log(allFood);
 
+// includes is a boolean method, returns true or false. Tells if a value is in an array
+let ingredients = [
+  'water',
+  'corn starch',
+  'flour',
+  'cheese',
+  'brown sugar',
+  'shrimp',
+  'eel',
+  'butter'
+];
+// does corn exist in array
+console.log(ingredients.includes('flour'));
+// to check if water is in the second half of the array
+// checks water after index 3
+ingredients.includes('water',3)
+
+if (ingredients.includes('flour')) {
+  console.log('I am gluten free I can\'t eat that');
+}
+
+// find index of an element
+console.log(ingredients.indexOf('shrimp'));
