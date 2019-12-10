@@ -78,5 +78,43 @@ if (ingredients.includes('flour')) {
   console.log('I am gluten free I can\'t eat that');
 }
 
-// find index of an element
+// find index of an element, returns -1 if the value is not in the array
 console.log(ingredients.indexOf('shrimp'));
+
+// reverse mutates the array and reverse the order
+console.log(ingredients);
+console.log(ingredients.reverse());
+
+// join, default seperator is a comma
+let letters = ['R','E','S','P','E','C','T'];
+console.log(letters.join());
+console.log(letters.join(''));
+console.log(letters.join('-'));
+console.log(letters.join('  '));
+console.log(letters);
+
+// Slice method returns a portion of an arrary and returns a new one
+let animals = ['shark','salmon','whale','bear','lizard','tortise'];
+// starting index, ending index(does not include ending index)
+let swimmers = animals.slice(0,3);
+let mammals = animals.slice(2,4);
+// starts at index 4 to the end
+let reptiles = animals.slice(4);
+console.log(swimmers,mammals,reptiles);
+
+// splice method changed the contents of an array by removing or replacing existing elements and/or adding new elements
+// will return removed elements
+// format: splice(starting index, number of items to delete, value to insert)
+animals.splice(1,0,'octopus');
+console.log(animals);
+animals.splice(5,1,'eagle');
+console.log(animals);
+animals.splice(1,3);
+console.log(animals);
+animals.splice(2,0,'dog','cat','lion');
+console.log(animals);
+
+// sort method mutates array and returns it
+// is most used when passing in a function to tell it how to sort
+animals.sort();
+console.log(animals);
