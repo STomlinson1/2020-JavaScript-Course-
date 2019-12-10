@@ -14,15 +14,11 @@ Common Array Methods:
   Sort - sorts an array
 */
 // initialize array
-let topSongs = [
-  'First time I Saw Your face',
-  'God only knows',
-  'A day in the Life',
-  'Life on Mars'];
+let topSongs = [ 'First time I Saw Your face', 'God only knows', 'A day in the Life', 'Life on Mars' ];
 
 // mutate array
 // push onto the end and return new length of array
- let strLength = topSongs.push('Fortunate Son');
+let strLength = topSongs.push('Fortunate Son');
 console.log(topSongs);
 console.log(strLength);
 
@@ -32,7 +28,7 @@ console.log(topSongs);
 console.log(nextSong);
 
 // Unshift Example
-let dishesToDO = ['big platter'];
+let dishesToDO = [ 'big platter' ];
 // keep adding to begining of array, return new length
 dishesToDO.unshift('large plate');
 dishesToDO.unshift('small plate');
@@ -47,35 +43,26 @@ dishesToDO.shift();
 console.log(dishesToDO);
 
 //Concat
-let fruits = ['apple','banana'];
-let veggies = ['brocoli','lettuce'];
-let meats = ['steak','burgers'];
+let fruits = [ 'apple', 'banana' ];
+let veggies = [ 'brocoli', 'lettuce' ];
+let meats = [ 'steak', 'burgers' ];
 // merge arrays
 console.log(fruits.concat(veggies)); // [ 'apple', 'banana', 'brocoli', 'lettuce' ]
 console.log(veggies.concat(fruits)); // [ 'brocoli', 'lettuce', 'apple', 'banana' ]
 
-let allFood = fruits.concat(veggies,meats); //[ 'apple', 'banana', 'brocoli', 'lettuce', 'steak', 'burgers' ]
+let allFood = fruits.concat(veggies, meats); //[ 'apple', 'banana', 'brocoli', 'lettuce', 'steak', 'burgers' ]
 console.log(allFood);
 
 // includes is a boolean method, returns true or false. Tells if a value is in an array
-let ingredients = [
-  'water',
-  'corn starch',
-  'flour',
-  'cheese',
-  'brown sugar',
-  'shrimp',
-  'eel',
-  'butter'
-];
+let ingredients = [ 'water', 'corn starch', 'flour', 'cheese', 'brown sugar', 'shrimp', 'eel', 'butter' ];
 // does corn exist in array
 console.log(ingredients.includes('flour'));
 // to check if water is in the second half of the array
 // checks water after index 3
-ingredients.includes('water',3)
+ingredients.includes('water', 3);
 
 if (ingredients.includes('flour')) {
-  console.log('I am gluten free I can\'t eat that');
+	console.log("I am gluten free I can't eat that");
 }
 
 // find index of an element, returns -1 if the value is not in the array
@@ -86,7 +73,7 @@ console.log(ingredients);
 console.log(ingredients.reverse());
 
 // join, default seperator is a comma
-let letters = ['R','E','S','P','E','C','T'];
+let letters = [ 'R', 'E', 'S', 'P', 'E', 'C', 'T' ];
 console.log(letters.join());
 console.log(letters.join(''));
 console.log(letters.join('-'));
@@ -94,24 +81,24 @@ console.log(letters.join('  '));
 console.log(letters);
 
 // Slice method returns a portion of an arrary and returns a new one
-let animals = ['shark','salmon','whale','bear','lizard','tortise'];
+let animals = [ 'shark', 'salmon', 'whale', 'bear', 'lizard', 'tortise' ];
 // starting index, ending index(does not include ending index)
-let swimmers = animals.slice(0,3);
-let mammals = animals.slice(2,4);
+let swimmers = animals.slice(0, 3);
+let mammals = animals.slice(2, 4);
 // starts at index 4 to the end
 let reptiles = animals.slice(4);
-console.log(swimmers,mammals,reptiles);
+console.log(swimmers, mammals, reptiles);
 
 // splice method changed the contents of an array by removing or replacing existing elements and/or adding new elements
 // will return removed elements
 // format: splice(starting index, number of items to delete, value to insert)
-animals.splice(1,0,'octopus');
+animals.splice(1, 0, 'octopus');
 console.log(animals);
-animals.splice(5,1,'eagle');
+animals.splice(5, 1, 'eagle');
 console.log(animals);
-animals.splice(1,3);
+animals.splice(1, 3);
 console.log(animals);
-animals.splice(2,0,'dog','cat','lion');
+animals.splice(2, 0, 'dog', 'cat', 'lion');
 console.log(animals);
 
 // sort method mutates array and returns it
