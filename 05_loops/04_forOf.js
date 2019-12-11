@@ -49,5 +49,27 @@ const words1 = [ 'mail', 'milk', 'bath', 'black' ];
 const words2 = [ 'box', 'shake', 'tub', 'berry' ];
 
 for (let i = 0; i < words1.length; i++) {
-	console.log(words1[i], words2[i]);
+	console.log(`${words1[i]}${words2[i]}`);
+}
+
+// initalize movieReview object
+const movieReviews = {
+	Arrival                : 9.5,
+	Alien                  : 9,
+	Amelie                 : 8,
+	'In Bruges'            : 9,
+	Amadeus                : 10,
+	'Kill Bill'            : 9,
+	'Little Miss Sunshine' : 7.5,
+	Coraline               : 7.5
+};
+
+// iterate over keys of object, print key and value
+for (let keys of Object.keys(movieReviews)) {
+	console.log(keys, movieReviews[keys]);
+}
+
+// iterate over values of object, print values
+for (let value of Object.values(movieReviews)) {
+	console.log(value);
 }
