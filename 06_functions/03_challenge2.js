@@ -12,3 +12,4 @@ function avgArray(arr){
 
 const nums = [75,76,80,95,100];
 console.log(avgArray(nums));
+console.log(avgArray([0,50]));

@@ -26,6 +26,8 @@ const step4 = step3 + 1;
 console.log(step4);
 
 //all in one step
-//  Math.floor(Math.random() * upperBound) + lowerBound
-let randNum = Math.floor(Math.random() * 10) + 1;
-console.log(randNum);
+
+// returns a random integer between to values(inclusive)
+function getRndInteger(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
