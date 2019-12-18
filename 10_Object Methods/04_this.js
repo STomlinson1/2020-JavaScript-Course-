@@ -18,9 +18,6 @@ const person = {
 	printBio() {
 		const fullName = this.fullname();
 		console.log(`${fullName} is a person`);
-	},
-	laugh    : () => {
-		console.log(this);
 	}
 };
 person.printBio();
@@ -29,7 +26,7 @@ person.printBio();
 // when we use this inside of a method, it is a way of accessing the partent object
 //the value changes depending on how the method is called
 
-const printBio = person.printBio;
-printBio();
-
+// const printBio = person.printBio;
+// printBio();
+// person.laugh();
 // this behaves differently in arrow functions
