@@ -30,3 +30,27 @@ person.printBio();
 // printBio();
 // person.laugh();
 // this behaves differently in arrow functions
+
+//'this' uses its parents 'this'
+const annoyer = {
+	phrases    : [ 'literally', 'cray cray', 'i cant even', 'totes', 'yolo', 'cant stop' ],
+	pickPhrase() {
+		const { phrases } = this;
+		const indx = Math.floor(Math.random() * phrases.length);
+		return phrases[indx];
+	},
+	start() {
+		console.log(this.pickPhrase());
+		//we need to use an arrow function here so 'this' can use the start() 'this'
+		//creates a refernce to the object for the nested function
+		this.timerId = setInterval(() => {
+			console.log(this.pickPhrase());
+		}, 3000);
+	},
+	stop() {
+		clearInterval(this.timerId);
+	}
+};
+
+annoyer.start();
+//this when used in an arrow function will be the same as its parent function.
