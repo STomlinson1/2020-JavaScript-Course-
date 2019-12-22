@@ -1,0 +1,16 @@
+.done {
+	color: gray;
+	text-decoration: line-through;
+	opacity: 50%;
+}
+
+.special {
+	color: teal;
+	font-size: 30px;
+	border: 1px solid teal;
+}
+
+.todo {
+	font-size: 30px;
+	color: olive;
+}
