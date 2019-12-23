@@ -7,7 +7,7 @@ section.appendChild(newh2);
 
 const newImg = document.createElement('img');
 newImg.src = 'https://source.unsplash.com/daily';
-newImg.style.width = '300px';
+newImg.style.width = '   4300px';
 
 document.body.appendChild(newImg);
 
