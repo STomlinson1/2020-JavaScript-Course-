@@ -90,7 +90,6 @@ const makeChart = (games, targetTeam) => {
 	for (let game of games) {
 		const gameLi = document.createElement('li');
 		gameLi.innerHTML = getScoreLine(game);
-		isWinner(game, targetTeam);
 		gameLi.classList.add(isWinner(game, targetTeam) ? 'win' : 'loss');
 		ulParent.appendChild(gameLi);
 	}
