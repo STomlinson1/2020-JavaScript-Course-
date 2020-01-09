@@ -1,3 +1,7 @@
+/* 
+Examples showing how callbacks can get messy quickly
+*/
+
 const btn = document.querySelector('button');
 
 // setTimeout(() => {
@@ -16,19 +20,52 @@ const btn = document.querySelector('button');
 // 	}, 1000);
 // }, 1000);
 
-const moveX = (element, amount, delay, callback) => {
+const moveX = (element, amount, delay, onSuccess, onFailure) => {
 	setTimeout(() => {
-		element.style.transform = `translate(${amount}px)`;
-		if (callback) callback();
+		let bodyBoundary = document.body.clientWidth;
+		const elRight = element.getBoundingClientRect().right;
+		const currLeft = element.getBoundingClientRect().left;
+		if (elRight + amount > bodyBoundary) {
+			// console.log('DONE - Cannot go that far');
+			onFailure();
+		} else {
+			element.style.transform = `translate(${currLeft + amount}px)`;
+			onSuccess();
+		}
 	}, delay);
 };
 
-moveX(btn, 100, 1000, () => {
-	moveX(btn, 200, 1000, () => {
-		moveX(btn, 300, 1000, () => {
-			moveX(btn, 400, 1000, () => {
-				moveX(btn, 500, 1000);
-			});
-		});
-	});
-});
+// moveX(btn, 100, 1000, () => {
+// 	moveX(btn, 100, 1000, () => {
+// 		moveX(btn, 100, 1000, () => {
+// 			moveX(btn, 100, 1000, () => {
+// 				moveX(btn, 1000, 1000);
+// 			});
+// 		});
+// 	});
+// });
+
+moveX(
+	btn,
+	100,
+	1000,
+	() => {
+		//success
+		moveX(
+			btn,
+			100,
+			1000,
+			() => {
+				//success
+			},
+			() => {
+				//fail
+				alert('Cannot Move Further');
+			}
+		);
+	},
+	() => {
+		//failure
+		alert('Cannot Move Further');
+	}
+);
