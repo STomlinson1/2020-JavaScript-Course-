@@ -22,11 +22,14 @@ const btn = document.querySelector('button');
 
 const moveX = (element, amount, delay, onSuccess, onFailure) => {
 	setTimeout(() => {
+		// get width of page
 		let bodyBoundary = document.body.clientWidth;
+		// get right attribute of element
 		const elRight = element.getBoundingClientRect().right;
+		//track current left of element
 		const currLeft = element.getBoundingClientRect().left;
+		//if the element moves off the page
 		if (elRight + amount > bodyBoundary) {
-			// console.log('DONE - Cannot go that far');
 			onFailure();
 		} else {
 			element.style.transform = `translate(${currLeft + amount}px)`;

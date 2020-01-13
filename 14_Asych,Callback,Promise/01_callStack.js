@@ -58,7 +58,7 @@ For the above code, the browser takes over and sets a timer
 
 /* 
 HOW BROWSERS HELP JAVASCRIPT:
-Browers come witn Web APIs that are able to handle certain tasks in the background ( like making requests or setTimeout)
+Browers come with Web APIs that are able to handle certain tasks in the background ( like making requests or setTimeout)
 The JS call stack recognizes these Web API functions and passes them off to the browser to take care of.
 Once the browser finishes those tasks, they return are pushed onto the stack as a callback.
 */
