@@ -6,7 +6,7 @@ at its core, asycn functions are syntatical sugar for promises
 
 The async keyword:
   Async functions always return a promise.
-  If the function returns a valie, the promise will be resolved with that value.
+  If the function returns a value, the promise will be resolved with that value.
   If the function throws an exception, the promise will be rejected
 
 The await keyword:
@@ -43,7 +43,7 @@ add('e', 'r')
 async function getPlanets() {
 	try {
 		const res = await axios.get('https://swapi.co/api/planets/');
-		console.log(res.data);
+		console.log(res.data); //only runs once previous line is completed
 	} catch (e) {
 		console.log('In Catch', e);
 	}
@@ -96,12 +96,67 @@ animateRight(btn).catch((error) => console.log('All Done', error));
 // 		console.log(`Element is at ${elRight}px, ${amount}px is too large`);
 // 	});
 
-async function get3Pokemon() {
-	const poke1 = await axios.get('https://pokeapi.co/api/v2/pokemon/1');
-	const poke2 = await axios.get('https://pokeapi.co/api/v2/pokemon/1');
-	const poke3 = await axios.get('https://pokeapi.co/api/v2/pokemon/1');
+// *Sequential requests
+// async function get3Pokemon() {
+// poke1,2,3 are storing values
+// 	const poke1 = await axios.get('https://pokeapi.co/api/v2/pokemon/1');
+// 	const poke2 = await axios.get('https://pokeapi.co/api/v2/pokemon/2');
+// 	const poke3 = await axios.get('https://pokeapi.co/api/v2/pokemon/3');
 
-	console.log(poke1.data);
+// 	console.log(poke1.data);
+// 	console.log(poke2.data);
+// 	console.log(poke3.data);
+// }
+
+// *Parallel Request
+async function get3Pokemon() {
+	// the three request will be sent at the same time
+	// they are promises
+	const prom1 = axios.get('https://pokeapi.co/api/v2/pokemon/1');
+	const prom2 = axios.get('https://pokeapi.co/api/v2/pokemon/2');
+	const prom3 = axios.get('https://pokeapi.co/api/v2/pokemon/3');
+	// await the response that comes back and store the resolved value
+	// create an array containing the resolved values
+	// the following promise is resolved when all three promises are resolved
+	const results = await Promise.all([ prom1, prom2, prom3 ]);
+	printPokemon(results);
+}
+
+function printPokemon(results) {
+	for (let pokemon of results) {
+		console.log(pokemon.data.name);
+	}
 }
 
 get3Pokemon();
+
+//* in sequence
+async function lightShow() {
+	await changeBodyColor('teal', 1000);
+	await changeBodyColor('pink', 1000);
+	await changeBodyColor('red', 1000);
+	await changeBodyColor('blue', 1000);
+}
+
+//* in parallel
+// async function lightShow() {
+// 	const p1 = changeBodyColor('teal', 1000);
+// 	const p2 = changeBodyColor('pink', 1000);
+// 	const p3 = changeBodyColor('red', 1000);
+// 	const p4 = changeBodyColor('blue', 1000);
+// 	await p1;
+// 	await p2;
+// 	await p3;
+// 	await p4;
+// }
+
+function changeBodyColor(color, delay) {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			document.body.style.backgroundColor = color;
+			resolve();
+		}, delay);
+	});
+}
+
+lightShow();
