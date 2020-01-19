@@ -19,12 +19,12 @@ class Timer {
 	//use arrow function to fix the 'this' value
 	start = () => {
 		if (this.onStart) {
-			this.onStart();
+			this.onStart(this.timeRemaining);
 		}
 		//since we want the timer to start immediately we call tick once
 		this.tick();
 		//this will run tick method every second
-		this.intervalID = setInterval(this.tick, 1000);
+		this.intervalID = setInterval(this.tick, 10);
 		console.log(this.intervalID);
 	};
 
@@ -41,9 +41,9 @@ class Timer {
 		} else {
 			// const timeRemaining = this.timeRemaining;
 			// this.durationInput.value = timeRemaining - 1;
-			this.timeRemaining = this.timeRemaining - 1;
+			this.timeRemaining = this.timeRemaining - 0.01;
 			if (this.onTick) {
-				this.onTick();
+				this.onTick(this.timeRemaining);
 			}
 		}
 	};
@@ -56,8 +56,6 @@ class Timer {
 	}
 
 	set timeRemaining(time) {
-		this.durationInput.value = time;
+		this.durationInput.value = time.toFixed(2);
 	}
-
-	onDurationChange = () => {};
 }
