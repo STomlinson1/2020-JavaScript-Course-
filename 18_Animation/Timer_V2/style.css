@@ -1,0 +1,7 @@
+.dial {
+	height: 500px;
+	width: 500px;
+	stroke: blueviolet;
+	stroke-width: 15px;
+	fill: transparent;
+}
